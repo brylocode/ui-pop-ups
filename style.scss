@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$primary-color: #ED6755;
+$secondary-color: #1C1B5E;
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Roboto',
+        sans-serif;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+body {
+    background-color: #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.pop-up {
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 425px;
+    min-width: 325px;
+    padding: 30px;
+    border-radius: 20px;
+    background-color: #fff;
+    font-family: 'Roboto',
+        sans-serif;
+    transition: top .3s, opacity .1s;
+
+    &__close {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        opacity: 0.3;
+        transition: transform .2s;
+
+        &:hover {
+            transform: scale(.9);
+        }
+    }
+
+    &__img {
+        margin: 35px 0 30px 0;
+        width: 86px;
+    }
+
+    &__description {
+        font-size: 18px;
+        text-align: center;
+        line-height: 24px;
+    }
+
+    &__btn {
+        padding: 14px 65px;
+        border-radius: 5px;
+        margin: 35px 0;
+        background-color: #ED6755;
+        color: #fff;
+        text-align: center;
+        font-family: inherit;
+        box-shadow: 0 10px 30px -10px #ED6755;
+        transition: filter .2s;
+
+        &:hover {
+            filter: brightness(105%);
+        }
+    }
+}
+
+.pop-up--active {
+    top: 5%;
+    left: 50%;
+    opacity: 1;
+}
+
+.pop-up--primary {
+    .pop-up__btn {
+        background-color: $primary-color;
+        box-shadow: 0 10px 30px -10px $primary-color;
+    }
+}
+
+.pop-up--secondary {
+    .pop-up__btn {
+        background-color: $secondary-color;
+        box-shadow: 0 10px 30px -10px $secondary-color;
+    }
+}
+
+.pop-up-demo-btn {
+    text-transform: uppercase;
+    background-color: rgb(119, 51, 197);
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 10px;
+    color: #fff;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .3)
+}
